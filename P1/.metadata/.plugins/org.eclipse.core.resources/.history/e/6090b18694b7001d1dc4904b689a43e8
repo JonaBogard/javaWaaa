@@ -1,0 +1,95 @@
+package omegaup;
+import java.util.Scanner;
+public class Main {
+	public static void main(String[] args){
+		Scanner in = new Scanner(System.in);
+		int d = in.nextInt();
+		int m = in.nextInt();
+	case "nov":
+		if (dia<=21) {
+		imagen="escorpio.jpg";
+		}else{
+		imagen="sagitario.jpg";
+		}
+		break;
+		case "dic":
+		if (dia<=21) {
+		imagen="sagitario.jpg";
+		}else{
+		imagen="capricornio.jpg";
+		}
+		break;
+		case "en":
+		if (dia<=21) {
+		imagen="capricornio.jpg";
+		}else{
+		imagen="acuario.jpg";
+		}
+		break;
+		case "fe":
+		if (dia<=21) {
+		imagen="acuario.jpg";
+		}else{
+		imagen="piscis.jpg";
+		}
+		break;
+		case "ma":
+		if (dia<=21) {
+		imagen="piscis.jpg";
+		}else{
+		imagen="aries.jpg";
+		}
+		break;
+		case "ab":
+		if (dia<=21) {
+		imagen="aries.jpg";
+		}else{
+		imagen="tauro.jpg";
+		}
+		break;
+		case "may":
+		if (dia<=21) {
+		imagen="tauro.jpg";
+		}else{
+		imagen="geminis.jpg";
+		}
+		break;
+		case "jun":
+		if (dia<=21) {
+		imagen="geminis.jpg";
+		}else{
+		imagen="cancer.jpg";
+		}
+		break;
+		case "jul":
+		if (dia<=21) {
+		imagen="cancer.jpg";
+		}else{
+		imagen="leo.jpg";
+		}
+		break;
+		case "ago":
+		if (dia<=21) {
+		imagen="leo.jpg";
+		}else{
+		imagen="virgo.jpg";
+		}
+		break;
+		case "sep":
+		if (dia<=21) {
+		imagen="virgo.jpg";
+		}else{
+		imagen="libra.jpg";
+		}
+		break;
+		case "oct":
+		if (dia<=21) {
+		imagen="libra.jpg";
+		}else{
+		imagen="escorpio.jpg";
+		}
+		break;
+	}
+}
+
+//System.out.print(formateador.format(imc));

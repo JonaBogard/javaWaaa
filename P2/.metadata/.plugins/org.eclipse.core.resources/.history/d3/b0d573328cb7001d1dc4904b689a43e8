@@ -1,0 +1,21 @@
+package omegaup;
+import java.util.Scanner;
+import java.text.DecimalFormat;
+public class Main {
+	public static void main(String[] args){
+		Scanner in = new Scanner(System.in);
+		DecimalFormat formateador = new DecimalFormat("#.00");
+		double h = in.nextDouble();
+		double p = in.nextDouble();
+		double c = p/(h*h);
+		if(c<=18.49) {
+			System.out.println(formateador.format(c));
+			System.out.print("Infra Peso");
+			
+		}else {
+			System.out.print("coito");
+		}
+	}
+}
+
+//System.out.print(formateador.format(imc));

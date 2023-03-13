@@ -1,0 +1,36 @@
+package omegaup;
+import java.util.Scanner;
+import java.text.DecimalFormat;
+public class Main {
+	public static void main(String[] args){
+		Scanner in = new Scanner(System.in);
+		DecimalFormat formateador = new DecimalFormat("#.00");
+		double h = in.nextDouble();
+		double p = in.nextDouble();
+		double c = p/(h*h);
+		if(c<=18.49) {
+			System.out.println(formateador.format(c));
+			System.out.print("Infra Peso");
+			
+		}if(c>=18.50 && c<=24.99){
+			System.out.println(formateador.format(c));
+			System.out.print("Peso Normal");
+		}if(c>=25 && c<=29.99){
+			System.out.println(formateador.format(c));
+			System.out.print("Sobre Peso");
+		}if(c>=30 && c<=34.99){
+			System.out.println(formateador.format(c));
+			System.out.print("Obesidad Leve");
+		}if(c>=35 && c<=39.99){
+			System.out.println(formateador.format(c));
+			System.out.print("Peso Normal");
+		}if(c>=40){
+			System.out.println(formateador.format(c));
+			System.out.print("Obesidad Morbida");
+		}else {
+			System.out.print("coito");
+		}
+	}
+}
+
+//System.out.print(formateador.format(imc));

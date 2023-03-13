@@ -1,0 +1,36 @@
+package omegaup;
+import java.util.Scanner;
+public class Main {
+	public static void main(String[] args){
+		Scanner in = new Scanner(System.in);
+		int n = in.nextInt();
+		if(n==1) {
+			System.out.print("Enero");
+		}if(n==2){
+			System.out.print("Febrero");
+		}if(n==3){
+			System.out.print("Marzo");
+		}if(n==4){
+			System.out.print("Abril");
+		}if(n==5){
+			System.out.print("Mayo");
+		}if(n==6){
+			System.out.print("Junio");
+		}
+		if(n==7) {
+			System.out.print("Julio");
+		}if(n==8){
+			System.out.print("Agosto");
+		}if(n==9){
+			System.out.print("Septiembre");
+		}if(n==10){
+			System.out.print("Octubre");
+		}if(n==11){
+			System.out.print("Noviembre");
+		}if(n==12){
+			System.out.print("Diciembre");
+		}
+	}
+}
+
+//System.out.print(formateador.format(imc));

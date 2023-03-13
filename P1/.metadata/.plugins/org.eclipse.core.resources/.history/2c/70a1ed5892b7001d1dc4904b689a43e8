@@ -1,0 +1,14 @@
+package omegaup;
+import java.util.Scanner;
+import java.text.DecimalFormat;
+public class kk {
+	public static void main(String[] args){
+		DecimalFormat formateador = new DecimalFormat("###");
+		Scanner in = new Scanner(System.in);
+		int c = in.nextInt();
+		int k = (int)(c+273.15);
+		int f = (int)(c*1.8)+32;
+		int r =(int) (c*.8);
+		System.out.print(formateador.format(k)+" "+formateador.format(f)+" "+formateador.format(r));
+	}
+}

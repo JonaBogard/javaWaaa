@@ -1,0 +1,37 @@
+package ickkck;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class conexion {
+	Connection cx;
+	String url="jdbc:mysql://localhost:3306/a605";
+	String user="root";
+	String pasword="";
+	public conexion() {
+		
+	}
+	public Connection conectar() {
+		try {
+			cx=DriverManager.getConnection(url,user,pasword);
+			System.out.println("Connexion Succeful");
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		return cx;
+	}
+	public void desconectar() {
+		try {
+			cx.close();
+			System.out.println("Common to Momy");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	public static void main(String[] args) {
+		conexion c=new conexion();
+		c.conectar();
+	}
+}

@@ -1,0 +1,14 @@
+package omegaup;
+import java.util.Scanner;
+import java.text.DecimalFormat;
+public class Main {
+	public static void main(String[] args){
+		Scanner in = new Scanner(System.in);
+		DecimalFormat formateador = new DecimalFormat("#.00");
+		int h = in.nextInt();
+		int p = in.nextInt();
+		int imc = p/(h*h);
+		System.out.println(imc);
+	}
+}
+
