@@ -1,11 +1,11 @@
 package ickkck;
 
 import java.awt.EventQueue;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 import javax.swing.JButton;
+import javax.swing.JTextField;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.ActionListener;
@@ -19,11 +19,11 @@ public class vistaKK {
 	private JTextField txtPrecio;
 	private JTextField txtProveedor;
 	private JTextField txtCantidad;
-	private JButton btnInsertar;
+	private JButton btnAdd;
 	private JButton btnDelete;
 	private JButton btnUpdate;
 	private JButton btnShow;
-	private JButton btnLimpiar;
+	private JButton btnClean;
 
 	/**
 	 * Launch the application.
@@ -51,13 +51,6 @@ public class vistaKK {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	
-	public void limpiar() {
-		txtID.setText("");
-		txtDescripcion.setText("");
-		txtPrecio.setText("");
-		txtProveedor.setText("");
-		}
 	private void initialize() {
 		frmGestorDeProductos = new JFrame();
 		frmGestorDeProductos.setTitle("Gestor de Sexo");
@@ -86,33 +79,29 @@ public class vistaKK {
 		lblCantidad.setBounds(10, 104, 46, 14);
 		frmGestorDeProductos.getContentPane().add(lblCantidad);
 		
-		btnInsertar = new JButton("Insertar");
-		btnInsertar.addKeyListener(new KeyAdapter() {
-			@Override
-			public void keyTyped(KeyEvent e) {
-			}
-		});
-		btnInsertar.addActionListener(new ActionListener() {
+		btnAdd = new JButton("Add");
+		btnAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					producto np = new producto();
-					np.setDescripcion(txtDescripcion.getText());
-					np.setPrecio(Double.parseDouble(txtPrecio.getText()));
-					np.setCantidad(Integer.parseInt(txtCantidad.getText()));
-					np.setProveedor(txtProveedor.getText());
-					if (np.insertarProducto()) {
-						limpiar();
-						JOptionPane.showMessageDialog(null, "Producto agregado");
+					NegocioProveedor np = new NegocioProveedor();
+					np.setSuppliersID(txtID.getText());
+					np.setCompanyName(txtDescripcion.getText());
+					np.setContactName(txtPrecio.getText());
+					np.setContactTitle(txtProveedor.getText());
+					np.setAddress(txtCantidad.getText());
+					if (np.insertarProveedor()) {
+					clean();
+					JOptionPane.showMessageDialog(null, "Proveedor agregado");
 					} else {
-						JOptionPane.showMessageDialog(null, "ERROR");
+					JOptionPane.showMessageDialog(null, "ERROR");
 					}
-				} catch (Exception e2) {
+					} catch (Exception e2) {
 					JOptionPane.showMessageDialog(null, "ERROR");
 					}
 			}
 		});
-		btnInsertar.setBounds(49, 148, 89, 23);
-		frmGestorDeProductos.getContentPane().add(btnInsertar);
+		btnAdd.setBounds(49, 148, 89, 23);
+		frmGestorDeProductos.getContentPane().add(btnAdd);
 		
 		btnDelete = new JButton("Delete");
 		btnDelete.setBounds(174, 148, 89, 23);
@@ -126,14 +115,9 @@ public class vistaKK {
 		btnShow.setBounds(108, 192, 89, 23);
 		frmGestorDeProductos.getContentPane().add(btnShow);
 		
-		btnLimpiar = new JButton("Limpiar");
-		btnLimpiar.addKeyListener(new KeyAdapter() {
-			@Override
-			public void keyTyped(KeyEvent e) {
-			}
-		});
-		btnLimpiar.setBounds(253, 192, 89, 23);
-		frmGestorDeProductos.getContentPane().add(btnLimpiar);
+		btnClean = new JButton("Clean");
+		btnClean.setBounds(253, 192, 89, 23);
+		frmGestorDeProductos.getContentPane().add(btnClean);
 		
 		txtID = new JTextField();
 		txtID.addKeyListener(new KeyAdapter() {

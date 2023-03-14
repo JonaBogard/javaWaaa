@@ -1,11 +1,11 @@
 package ickkck;
 
 import java.awt.EventQueue;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 import javax.swing.JButton;
+import javax.swing.JTextField;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.ActionListener;
@@ -51,13 +51,6 @@ public class vistaKK {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	
-	public void limpiar() {
-		txtID.setText("");
-		txtDescripcion.setText("");
-		txtPrecio.setText("");
-		txtProveedor.setText("");
-		}
 	private void initialize() {
 		frmGestorDeProductos = new JFrame();
 		frmGestorDeProductos.setTitle("Gestor de Sexo");
@@ -101,7 +94,7 @@ public class vistaKK {
 					np.setCantidad(Integer.parseInt(txtCantidad.getText()));
 					np.setProveedor(txtProveedor.getText());
 					if (np.insertarProducto()) {
-						limpiar();
+						Limpiar();
 						JOptionPane.showMessageDialog(null, "Producto agregado");
 					} else {
 						JOptionPane.showMessageDialog(null, "ERROR");

@@ -1,0 +1,21 @@
+package ickkck;
+
+public class DataProducto {
+
+		public boolean insertarProveedor(producto np) {
+			return true;
+		}
+
+		public boolean cargarProveedor(producto np) {
+			return true;
+		}
+
+		public boolean eliminarProveedor(String SuppliersID) {
+			return true;
+		}
+
+		public boolean actualizarProveedor(producto np) {
+			return true;
+		}
+		
+}

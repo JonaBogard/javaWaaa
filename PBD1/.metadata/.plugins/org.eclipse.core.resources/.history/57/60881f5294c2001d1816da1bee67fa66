@@ -2,26 +2,18 @@ package ickkck;
 
 public class producto {
 	int id;
-	String descripcion;
-	double precio;
-	String proveedor;
+	Str descripcion;
+	double preingcio;
+	String provedor;
 	int cantidad;
-	DataProducto dp = null;
-
+	DataProducto dp= null;
+	
 	public producto() {
 		dp = new DataProducto();
 	}
-
-	public boolean insertarProducto() {
-		if(dp.insertarProducto(this)) {
-			return true;
-		}else {
-			return false;
-		}
-	}
 	
 		//Descripcion
-	public boolean insertarDescripcion() {
+	public boolean addDescripcion() {
 		return (true)?true:false;
 	}
 	public boolean deleteDescripcion() {
@@ -37,7 +29,7 @@ public class producto {
 		return (true)?true:false;
 	}
 	//Precio
-	public boolean insertarPrecio() {
+	public boolean addPrecio() {
 		return (true)?true:false;
 	}
 	public boolean deletePrecio() {
@@ -55,7 +47,7 @@ public class producto {
 	
 	//Proveedor
 	
-		public boolean insertarProveedor() {
+		public boolean addProveedor() {
 			return (true)?true:false;
 		}
 		public boolean deleteProveedor() {
@@ -72,7 +64,7 @@ public class producto {
 		}
 		//Cantidad
 		
-			public boolean insertarCantidad() {
+			public boolean addCantidad() {
 				return (true)?true:false;
 			}
 			public boolean deleteCantidad() {
