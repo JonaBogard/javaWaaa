@@ -7,6 +7,18 @@ import java.sql.SQLException;
 
 public class DataProducto {
 	
+	private static final String controlador = "com.mysql.cj.jdbc.Driver";
+	private static final String url = "jdbc:mysql://localhost:3306/simulacion"; 
+	private static final String user = "root";
+	private static final String password = "";
+	static {
+		try {
+		Class.forName(controlador);
+		} catch (ClassNotFoundException e) { 
+		e.printStackTrace();
+		}
+	}
+	
 	public boolean insertarProducto(producto np) {
 		PreparedStatement ps = null;
 		try {

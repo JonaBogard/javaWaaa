@@ -12,13 +12,7 @@ public class conexion {
 	public conexion() {
 		
 	}
-	static {
-		try {
-		Class.forName(conexion);
-		} catch (ClassNotFoundException e) { 
-		e.printStackTrace();
-		}
-	}
+	
 	public Connection conectar() {
 		try {
 			cx=DriverManager.getConnection(url,user,pasword);
