@@ -13,73 +13,34 @@ public class Productos {
 	}
 
 	public boolean insertarProductos() {
-		if(dp.insertarProductos(this)) {
+		if (dp.insertarProductos(this)) {
 			return true;
-		}else {
+		} else {
 			return false;
 		}
 	}
-	
-	//Descripcion
-	
-	public boolean insertarDescripcion() {
-		return (dp.insertarProductos(this))?true:false;
+
+	public boolean cargarProductos() {
+		if (dp.cargarProductos(this)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
-	public boolean cargarDescripcion() {
-		return (true)?true:false;
+	public boolean eliminarProductos() {
+		if (dp.eliminarProductos(this)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
-	public boolean eliminarDescripcion() {
-		return (true)?true:false;
+	public boolean editarProductos() {
+		if (dp.editarProductos(this)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
-	public boolean actualizarDescripcion() {
-		return (true)?true:false;
-	}
-	
-	//Precio
-	
-	public boolean insertarPrecio() {
-		return (dp.insertarProductos(this))?true:false;
-	}
-	public boolean cargarPrecio() {
-		return (true)?true:false;
-	}
-	public boolean eliminarPrecio() {
-		return (true)?true:false;
-	}
-	public boolean actualizarPrecio() {
-		return (true)?true:false;
-	}
-	
-	//Proveedor
-	
-	public boolean insertarProveedor() {
-		return (dp.insertarProductos(this))?true:false;
-	}
-	public boolean cargarProveedor() {
-		return (true)?true:false;
-	}
-	public boolean eliminarProveedor() {
-		return (true)?true:false;
-	}
-	public boolean actualizarProveedor() {
-		return (true)?true:false;
-	}
-	
-	//Cantidad
-	
-	public boolean insertarCantidad() {
-		return (dp.insertarProductos(this))?true:false;
-	}
-	public boolean cargarCantidad() {
-		return (true)?true:false;
-	}
-	public boolean eliminarCantidad() {
-		return (true)?true:false;
-	}
-	public boolean actualizarCantidad() {
-		return (true)?true:false;
-	}
-		
 
 	public Productos(int id, String descripcion, double precio, String proveedor, int cantidad) {
 		super();
@@ -128,5 +89,5 @@ public class Productos {
 
 	public void setCantidad(int cantidad) {
 		this.cantidad = cantidad;
-	} 
+	}
 }

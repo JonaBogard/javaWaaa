@@ -3,6 +3,7 @@ package test1;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 
@@ -47,6 +48,47 @@ public class DataProductos {
 			ps.setInt(5, np.getCantidad());
 			ps.executeUpdate();
 			return true;
+			} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+			}
+		}
+		public boolean cargarProductos(Productos np) {
+			PreparedStatement ps = null;
+			ResultSet rs = null;
+			try {
+			ps = conectar().prepareStatement("SELECT * FROM productos WHERE id=?");
+			ps.setInt(1, np.getId());
+			rs = ps.executeQuery();
+			if (rs.next()) {
+			np.setId(rs.getInt(1));
+			np.setDescripcion(rs.getString(2));
+			np.setPrecio(rs.getDouble(3));
+			np.setProveedor(rs.getString(4));
+			np.setCantidad(rs.getInt(5));
+			return true;
+			} else {
+			return false;
+			}
+			} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+			}
+		}
+		
+		public boolean eliminarProductos(String id) {
+			PreparedStatement ps = null;
+			try {
+			Productos np = new Productos();
+			np.setId(Integer.parseInt(id));
+			if (np.cargarProductos()) {
+			ps = conectar().prepareStatement("DELETE FROM productos WHERE id=?");
+			ps.setString(1, id);
+			ps.executeUpdate();
+			return true;
+			} else {
+			return false;
+			}
 			} catch (SQLException e) {
 			e.printStackTrace();
 			return false;

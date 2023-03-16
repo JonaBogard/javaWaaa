@@ -176,12 +176,45 @@ public class WinProductos {
 		frmCrudProductos.getContentPane().add(btnInsertar);
 		
 		btnCargar = new JButton("Cargar");
+		btnCargar.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					try {
+					String id = JOptionPane.showInputDialog("ID a Cargar");
+					Productos np = new Productos();
+					np.setId(Integer.parseInt(id));
+					if (np.cargarProductos()) {
+					txtId.setText(""+np.getId());
+					txtDescripcion.setText(np.getDescripcion());
+					txtPrecio.setText(""+np.getPrecio());
+					txtProveedor.setText(np.getProveedor());
+					txtCantidad.setText(""+np.getCantidad());
+					JOptionPane.showMessageDialog(null, "Proveedor encontrado");
+					} else {
+					JOptionPane.showMessageDialog(null, "ERROR");
+					}
+					} catch (Exception e2) {
+					JOptionPane.showMessageDialog(null, "ERROR");
+					}
+					}
+					});
 		btnCargar.setBounds(176, 176, 89, 23);
 		frmCrudProductos.getContentPane().add(btnCargar);
 		
 		btnEliminar = new JButton("Eliminar");
 		btnEliminar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				try {
+					String id = JOptionPane.showInputDialog("ID a Eliminar");
+					Productos np = new Productos();
+					np.setId(Integer.parseInt(id));
+					if (np.eliminarProductos()) {
+					JOptionPane.showMessageDialog(null, "Proveedor eliminado");
+					} else {
+					JOptionPane.showMessageDialog(null, "ERROR");
+					}
+					} catch (Exception e2) {
+					JOptionPane.showMessageDialog(null, "ERROR");
+					}
 			}
 		});
 		btnEliminar.setBounds(304, 176, 89, 23);
