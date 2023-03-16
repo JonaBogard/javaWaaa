@@ -1,6 +1,5 @@
 package test1;
 
-import test1.Productos;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -35,28 +34,17 @@ public class DataProductos {
 	dp.conectar();
 	}
 	
-	public boolean insertarProductos(Productos np) {
-		return true;
-		}
-		public boolean cargarProductos(Productos np) {
-		return true;
-		}
-		public boolean eliminarProductos(String Id) {
-		return true;
-		}
-		public boolean actualizarProductos(Productos np) {
-		return true;
-		}
+	
 		
 		public boolean insertarProductos(Productos np) {
 			PreparedStatement ps=null;
 			try {
 			ps=conectar().prepareStatement("INSERT INTO productos VALUES(?,?,?,?,?)");
-			ps.setString(1, np.getId());
+			ps.setInt(1, np.getId());
 			ps.setString(2, np.getDescripcion());
-			ps.setString(3, np.getPrecio());
+			ps.setDouble(3, np.getPrecio());
 			ps.setString(4, np.getProveedor());
-			ps.setString(5, np.getCantidad());
+			ps.setInt(5, np.getCantidad());
 			ps.executeUpdate();
 			return true;
 			} catch (SQLException e) {

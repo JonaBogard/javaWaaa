@@ -1,6 +1,5 @@
 package test1;
 
-import test1.Productos;
 import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -156,14 +155,14 @@ public class WinProductos {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					Productos np = new Productos();
-					np.setId(txtId.getText());
+					np.setId(Integer.parseInt(txtId.getText()));
 					np.setDescripcion(txtDescripcion.getText());
-					np.setPrecio(txtPrecio.getText());
+					np.setPrecio(Double.parseDouble(txtPrecio.getText()));
 					np.setProveedor(txtProveedor.getText());
-					np.setCantidad(txtCantidad.getText());
+					np.setCantidad(Integer.parseInt(txtCantidad.getText()));
 					if (np.insertarProductos()) {
 					limpiar();
-					JOptionPane.showMessageDialog(null, "Proveedor agregado");
+					JOptionPane.showMessageDialog(null, "Producto agregado");
 					} else {
 					JOptionPane.showMessageDialog(null, "ERROR");
 					}

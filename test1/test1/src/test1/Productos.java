@@ -128,5 +128,5 @@ public class Productos {
 
 	public void setCantidad(int cantidad) {
 		this.cantidad = cantidad;
-	}
+	} 
 }
