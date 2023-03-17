@@ -25,6 +25,7 @@ public class WinProductos {
 	private JButton btnCargar;
 	private JButton btnEliminar;
 	private JButton btnActualizar;
+	Productos p=new Productos();
 
 	/**
 	 * Launch the application.
@@ -180,15 +181,14 @@ public class WinProductos {
 				public void actionPerformed(ActionEvent e) {
 					try {
 					String id = JOptionPane.showInputDialog("ID a Cargar");
-					Productos np = new Productos();
-					np.setId(Integer.parseInt(id));
-					if (np.cargarProductos()) {
-					txtId.setText(""+np.getId());
-					txtDescripcion.setText(np.getDescripcion());
-					txtPrecio.setText(""+np.getPrecio());
-					txtProveedor.setText(np.getProveedor());
-					txtCantidad.setText(""+np.getCantidad());
-					JOptionPane.showMessageDialog(null, "Proveedor encontrado");
+					p.setId(Integer.parseInt(id));
+					if (p.cargarProductos()) {
+					txtId.setText(""+p.getId());
+					txtDescripcion.setText(p.getDescripcion());
+					txtPrecio.setText(""+p.getPrecio());
+					txtProveedor.setText(p.getProveedor());
+					txtCantidad.setText(""+p.getCantidad());
+					JOptionPane.showMessageDialog(null, "Producto encontrado");
 					} else {
 					JOptionPane.showMessageDialog(null, "ERROR");
 					}
@@ -208,7 +208,7 @@ public class WinProductos {
 					Productos np = new Productos();
 					np.setId(Integer.parseInt(id));
 					if (np.eliminarProductos()) {
-					JOptionPane.showMessageDialog(null, "Proveedor eliminado");
+					JOptionPane.showMessageDialog(null, "Proucto eliminado");
 					} else {
 					JOptionPane.showMessageDialog(null, "ERROR");
 					}
@@ -221,6 +221,25 @@ public class WinProductos {
 		frmCrudProductos.getContentPane().add(btnEliminar);
 		
 		btnActualizar = new JButton("Actualizar");
+		btnActualizar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					p.setId(Integer.parseInt(txtId.getText()));
+					p.setDescripcion(txtDescripcion.getText());
+					p.setPrecio(Double.parseDouble(txtPrecio.getText()));
+					p.setProveedor(txtProveedor.getText());
+					p.setCantidad(Integer.parseInt(txtCantidad.getText()));
+					if (p.actualizarProductos()) {
+					limpiar();
+					JOptionPane.showMessageDialog(null, "Producto actualizado");
+					} else {
+					JOptionPane.showMessageDialog(null, "ERROR");
+					}
+					} catch (Exception e2) {
+					JOptionPane.showMessageDialog(null, "ERROR");
+					}
+			}
+		});
 		btnActualizar.setBounds(453, 176, 89, 23);
 		frmCrudProductos.getContentPane().add(btnActualizar);
 	}

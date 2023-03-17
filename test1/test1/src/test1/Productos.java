@@ -28,14 +28,14 @@ public class Productos {
 		}
 	}
 	public boolean eliminarProductos() {
-		if (dp.eliminarProductos(this)) {
+		if (dp.eliminarProductos(this.getId())) {
 			return true;
 		} else {
 			return false;
 		}
 	}
-	public boolean editarProductos() {
-		if (dp.editarProductos(this)) {
+	public boolean actualizarProductos() {
+		if (dp.actualizarProductos(this)) {
 			return true;
 		} else {
 			return false;
