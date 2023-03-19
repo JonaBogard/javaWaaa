@@ -98,9 +98,10 @@ public class DataProductos {
 	public boolean actualizarProductos(Productos np) {
 		PreparedStatement ps = null;
 		try {
-		Productos np2 = np;
+		Productos np2 = new Productos();
+		np2.setId(np.getId());
 		if (np2.cargarProductos()) {
-		ps = conectar().prepareStatement("UPDATE productos SET descripcion=?,precio=?,proveedor=?,cantidad=? WHERE id=?");
+		ps = conectar().prepareStatement("UPDATE productos SET " + "descripcion=?, " + "precio=?, " + "proveedor=?, " + "cantidad=? " + " WHERE id=?");
 		ps.setString(1, np.getDescripcion());
 		ps.setDouble(2, np.getPrecio());
 		ps.setString(3, np.getProveedor());
@@ -110,11 +111,11 @@ public class DataProductos {
 		return true;
 		} else {
 		return false;
-		}
+	}
 		} catch (SQLException e) {
 		e.printStackTrace();
 		return false;
 		}
-		}
+	}
 
 }

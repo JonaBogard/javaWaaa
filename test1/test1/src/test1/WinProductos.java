@@ -224,6 +224,7 @@ public class WinProductos {
 		btnActualizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
+					Productos p= new Productos();
 					p.setId(Integer.parseInt(txtId.getText()));
 					p.setDescripcion(txtDescripcion.getText());
 					p.setPrecio(Double.parseDouble(txtPrecio.getText()));
