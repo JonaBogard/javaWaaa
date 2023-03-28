@@ -224,13 +224,13 @@ public class WinProductos {
 		btnActualizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					Productos p= new Productos();
-					p.setId(Integer.parseInt(txtId.getText()));
-					p.setDescripcion(txtDescripcion.getText());
-					p.setPrecio(Double.parseDouble(txtPrecio.getText()));
-					p.setProveedor(txtProveedor.getText());
-					p.setCantidad(Integer.parseInt(txtCantidad.getText()));
-					if (p.actualizarProductos()) {
+					Productos np= new Productos();
+					np.setId(Integer.parseInt(txtId.getText()));
+					np.setDescripcion(txtDescripcion.getText());
+					np.setPrecio(Double.parseDouble(txtPrecio.getText()));
+					np.setProveedor(txtProveedor.getText());
+					np.setCantidad(Integer.parseInt(txtCantidad.getText()));
+					if (np.actualizarProductos()) {
 					limpiar();
 					JOptionPane.showMessageDialog(null, "Producto actualizado");
 					} else {
